@@ -36,6 +36,7 @@ from
 			dev.examen e
             join dev.curs c on e.IdCurs = c.Id) as e;
 
+-- explain
 select
 	c.first_name,
     c.last_name,
@@ -50,6 +51,7 @@ right join sakila.inventory i on r.inventory_id = i.inventory_id
 join sakila.film f on i.film_id = f.film_id
 where c.customer_id is null;
 
+-- explain
 select
 	c.first_name,
     c.last_name,
@@ -63,3 +65,20 @@ from
     left join sakila.rental r on i.inventory_id = r.inventory_id
     left join sakila.customer c on r.customer_id = c.customer_id
 where r.rental_id is null;
+
+-- SET optimizer_trace="enabled=on";
+-- select
+-- 	c.first_name,
+--     c.last_name,
+--     f.title,
+--     i.inventory_id,
+--     i.film_id,
+--     r.rental_id
+-- from
+-- 	sakila.film f
+--     left join sakila.inventory i on f.film_id = i.film_id
+--     left join sakila.rental r on i.inventory_id = r.inventory_id
+--     left join sakila.customer c on r.customer_id = c.customer_id
+-- where r.rental_id is null;
+-- SELECT * FROM INFORMATION_SCHEMA.OPTIMIZER_TRACE;
+-- SET optimizer_trace="enabled=off";
