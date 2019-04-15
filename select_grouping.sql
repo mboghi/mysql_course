@@ -7,7 +7,8 @@ from
 	join customer on payment.customer_id = customer.customer_id
 group by
 	customer.customer_id;
-    
+
+-- explain 
 select
 	customer.first_name,
     customer.last_name,

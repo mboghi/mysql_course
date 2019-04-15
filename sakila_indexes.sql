@@ -45,3 +45,5 @@ from sakila.film
 where description like 'A Stu%';
 SELECT * FROM INFORMATION_SCHEMA.OPTIMIZER_TRACE;
 SET optimizer_trace="enabled=off";
+
+explain sakila.film;
