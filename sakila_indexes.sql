@@ -4,37 +4,50 @@ create table sakila.film_indexmulticol as select * from sakila.film;
 create table sakila.film_indexfull as select * from sakila.film;
 
 alter table  sakila.film_indexpref
+modify film_id int auto_increment primary key;
+
+alter table  sakila.film_indexpref
 add index film_indexpref (description(15));
+
+alter table  sakila.film_indexcol
+modify film_id int auto_increment primary key;
 
 alter table  sakila.film_indexcol
 add index film_indexcol (title);
 
 alter table  sakila.film_indexmulticol
+modify film_id int auto_increment primary key;
+
+alter table  sakila.film_indexmulticol
 add index film_indexmulticol (title,description(15));
+
+alter table  sakila.film_indexfull
+modify film_id int auto_increment primary key;
 
 alter table sakila.film_indexfull
 add fulltext index film_indexfull (description);
 
-explain
+-- explain
 select title, description
 from sakila.film
 where description like 'A Stu%';
 
-explain
+-- explain
 select title, description
 from sakila.film_indexpref
 where description like 'A Stu%';
     
-explain
+-- explain
 select title, description
 from sakila.film_indexcol
 where description like 'A Stu%';
-    
+
+-- explain    
 select title, description
 from sakila.film_indexmulticol
 where description like 'A Stu%';
 
-explain
+-- explain
 select title, description
 from sakila.film_indexfull
 where description like 'A Stu%';
