@@ -51,7 +51,8 @@ drop trigger dev.del_aft_profesor;
 delimiter $$
 create procedure dev.spDeleteAddressById(in idAdresa int)
 begin
-	declare exit handler for 1451 begin end;
+	declare adresa_delete_when_fk condition for 1451;
+	declare exit handler for adresa_delete_when_fk begin end;
 
 	delete from dev.adresa where Id = idAdresa;
 end;
