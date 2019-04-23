@@ -26,7 +26,7 @@ create table dev.Profesor(
 	Nume varchar(255) not null,
    	NumeIntreg varchar(510) generated always as (CONCAT(Prenume,Nume)),
 	IdAdresa int,
-	foreign key fk_profesor_adresa (IdAdresa) references dev.Adresa(Id) on delete cascade
+	foreign key fk_profesor_adresa (IdAdresa) references dev.Adresa(Id)
 );
 
 create table dev.Curs(
@@ -35,7 +35,7 @@ create table dev.Curs(
     DataInceput date not null,
     DataSfarsit date,
 	IdProfesor int,
-	foreign key fk_curs_profesor (IdProfesor) references dev.Profesor(Id)
+	foreign key fk_curs_profesor (IdProfesor) references dev.Profesor(Id) on delete set null
 );
 
 create table dev.Sesiune(

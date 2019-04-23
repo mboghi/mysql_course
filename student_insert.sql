@@ -1,11 +1,13 @@
 insert into dev.Adresa
 values 
-	(default,'Bucuresti','Bucuresti','Victoriei','1','1','1','1'),
-    (default,'Bucuresti','Bucuresti','Dacia','1','1','1','1'),
-    (default,'Bucuresti','Bucuresti','Catargiu','1','1','1','1'),
-    (default,'Bucuresti','Bucuresti','Decebal','1','1','1','1'),
-    (default,'Bucuresti','Bucuresti','Basarabia','1','1','1','1'),
-    (default,'Bucuresti','Bucuresti','Stefan Cel Mare','1','1','1','1');
+	(1,'Bucuresti','Bucuresti','Victoriei','1','1','1','1'),
+    (2,'Bucuresti','Bucuresti','Dacia','1','1','1','1'),
+    (3,'Bucuresti','Bucuresti','Catargiu','1','1','1','1'),
+    (4,'Bucuresti','Bucuresti','Decebal','1','1','1','1'),
+    (5,'Bucuresti','Bucuresti','Basarabia','1','1','1','1'),
+    (6,'Bucuresti','Bucuresti','Stefan Cel Mare','1','1','1','1'),
+    (7,'Bucuresti','Bucuresti','Colentina','1','1','1','1'),
+    (8,'Bucuresti','Bucuresti','Mosilor','1','1','1','1');
 
 insert into dev.Profesor
 values
@@ -14,7 +16,9 @@ values
     (3,'Marius','Achim',default,3,1),
     (4,'Maria','Achim',default,4,1),
     (5,'Pavel','Stan',default,5,2),
-    (6,'Anton','Spirea',default,6,2);
+    (6,'Anton','Spirea',default,6,2),
+    (7,'Andrei','Dobrescu',default,7,3),
+    (8,'Oana','Dinica',default,8,null);
 
 insert into dev.Sesiune(Id,DataInceput,DataSfarsit)
 values

@@ -19,4 +19,4 @@ add constraint fk_examen_sesiune foreign key (IdSesiune) references dev.Sesiune(
 
 alter table dev.Profesor
 add IdSefCatedra int,
-add constraint profesor_sefcatedra foreign key (IdSefCatedra) references dev.Profesor(Id);
+add constraint profesor_sefcatedra foreign key (IdSefCatedra) references dev.Profesor(Id) on delete set null;
